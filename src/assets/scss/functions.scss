@@ -1,0 +1,460 @@
+@mixin statusColor($colors...) {
+	@each $i in $colors {
+		.status.#{nth($i, 1)}, .status.st-#{nth($i, 1)} {
+        &:before {
+          background:nth($i, 2);
+        }
+    }
+    .statusDiv.#{nth($i, 1)}, .statusDiv.st-#{nth($i, 1)} {
+      //background:rgba(nth($i, 2), 0.07);
+      //border-color:rgba(nth($i, 2), 0.3);
+      //color:darken($color: nth($i, 2), $amount: 25%);
+      //color: darken($color: nth($i, 2), $amount: 10%);
+      &::before{
+        background: rgba(nth($i, 2), 1);
+      }
+    }
+    tr:hover {
+      .statusDiv.#{nth($i, 1)}, .statusDiv.st-#{nth($i, 1)} {
+        border-color:rgba(nth($i, 2), 0.3) !important;
+      }
+    }
+  }
+}
+@include statusColor(    
+  'new'              #24A2EE,
+  'validationfailed' #3035f5,
+  'processed'        #55CC6F,
+  'failed'           #c20a0a,
+  
+
+  'st-active'        #55CC6F,
+  'Completed'        #55CC6F,
+  'Scheduled'        #E3BC30,
+  'InProgress'       #1a7e3c,
+  'NotScheduled'     #63ace0, 
+);
+
+
+// Custome Spacing //
+@mixin spacing_factory ($start,$number,$end) {
+  @for $i from 0 to $end {
+    .m#{$number * $i + $start}{ margin: ($number  * $i) + px !important }
+    .mt#{$number * $i + $start}{ margin-top: ($number  * $i) + px !important }
+    .mb#{$number * $i + $start}{ margin-bottom: ($number  * $i) + px !important }
+    .ml#{$number * $i + $start}{ margin-left: ($number  * $i) + px !important }
+    .mr#{$number * $i + $start}{ margin-right: ($number  * $i) + px !important }
+    .my#{$number * $i + $start}{ margin-top: ($number  * $i) + px !important; margin-bottom: ($number  * $i) + px !important }
+    .mx#{$number * $i + $start}{ margin-right: ($number  * $i) + px !important; margin-left: ($number  * $i) + px !important }
+
+    .p#{$number * $i + $start} { padding: ($number  * $i) + px !important }
+    .pt#{$number * $i + $start}{ padding-top: ($number  * $i) + px !important }
+    .pb#{$number * $i + $start}{ padding-bottom: ($number  * $i) + px !important }
+    .pl#{$number * $i + $start}{ padding-left: ($number  * $i) + px !important }
+    .pr#{$number * $i + $start}{ padding-right: ($number  * $i) + px !important }
+    .py#{$number * $i + $start}{ padding-top: ($number  * $i) + px !important; padding-bottom: ($number  * $i) + px !important }
+    .px#{$number * $i + $start}{ padding-right: ($number  * $i) + px !important; padding-left: ($number  * $i) + px !important; }
+
+    @include md{
+      body .sm-m#{$number * $i + $start}{ margin: ($number  * $i) + px !important }
+      body .md-mt#{$number * $i + $start}{ margin-top: ($number  * $i) + px !important }
+      body .md-mb#{$number * $i + $start}{ margin-bottom: ($number  * $i) + px !important }
+      body .md-ml#{$number * $i + $start}{ margin-left: ($number  * $i) + px !important }
+      body .md-mr#{$number * $i + $start}{ margin-right: ($number  * $i) + px !important }
+
+      body .md-p#{$number * $i + $start} { padding: ($number  * $i) + px !important }
+      body .md-pt#{$number * $i + $start}{ padding-top: ($number  * $i) + px !important }
+      body .md-pb#{$number * $i + $start}{ padding-bottom: ($number  * $i) + px !important }
+      body .md-pl#{$number * $i + $start}{ padding-left: ($number  * $i) + px !important }
+      body .md-pr#{$number * $i + $start}{ padding-right: ($number  * $i) + px !important }  
+    }
+    @include sm{
+      body .sm-m#{$number * $i + $start}{ margin: ($number  * $i) + px !important }
+      body .sm-mt#{$number * $i + $start}{ margin-top: ($number  * $i) + px !important }
+      body .sm-mb#{$number * $i + $start}{ margin-bottom: ($number  * $i) + px !important }
+      body .sm-ml#{$number * $i + $start}{ margin-left: ($number  * $i) + px !important }
+      body .sm-mr#{$number * $i + $start}{ margin-right: ($number  * $i) + px !important }
+
+      body .sm-p#{$number * $i + $start} { padding: ($number  * $i) + px !important }
+      body .sm-pt#{$number * $i + $start}{ padding-top: ($number  * $i) + px !important }
+      body .sm-pb#{$number * $i + $start}{ padding-bottom: ($number  * $i) + px !important }
+      body .sm-pl#{$number * $i + $start}{ padding-left: ($number  * $i) + px !important }
+      body .sm-pr#{$number * $i + $start}{ padding-right: ($number  * $i) + px !important }  
+    }
+
+    @include xs{
+      body .xs-m#{$number * $i + $start}{ margin: ($number  * $i) + px !important }
+      body .xs-mt#{$number * $i + $start}{ margin-top: ($number  * $i) + px !important }
+      body .xs-mb#{$number * $i + $start}{ margin-bottom: ($number  * $i) + px !important }
+      body .xs-ml#{$number * $i + $start}{ margin-left: ($number  * $i) + px !important }
+      body .xs-mr#{$number * $i + $start}{ margin-right: ($number  * $i) + px !important }
+
+      body .xs-p#{$number * $i + $start} { padding: ($number  * $i) + px !important }
+      body .xs-pt#{$number * $i + $start}{ padding-top: ($number  * $i) + px !important }
+      body .xs-pb#{$number * $i + $start}{ padding-bottom: ($number  * $i) + px !important }
+      body .xs-pl#{$number * $i + $start}{ padding-left: ($number  * $i) + px !important }
+      body .xs-pr#{$number * $i + $start}{ padding-right: ($number  * $i) + px !important }  
+    }
+  }
+}
+@include spacing_factory (0,5,80);
+// END Custome Spacing  -----------------------------//
+
+@mixin width_factory ($number,$end) {
+  @for $i from 0 to $end {
+    .w#{$number * $i}{ width:($number  * $i) + px !important }
+    .min-w#{$number * $i}{ min-width:($number  * $i) + px !important }
+    .max-w#{$number * $i}{ max-width:($number  * $i) + px !important }
+  }
+}
+@include width_factory (10,30); //(20,50)
+
+
+
+/************|GAP|****************************/
+@mixin gap_factory ($number,$end) {
+  @for $i from 0 to $end {
+    .gap-#{$i}{ gap:($i) + px !important }
+ 
+    @include sm{
+      .sm-gap-#{$i}{ gap:($i) + px !important }
+    }
+    @include xs{
+      .xs-gap-#{$i}{ gap:($i) + px !important }
+    }
+  } 
+}
+@include gap_factory (1,100); //(20,50)
+
+
+/****************************************/
+@mixin height_factory ($number,$end) {
+  @for $i from 0 to $end {
+    .h#{$number * $i}{ height:($number  * $i) + px !important }
+    .min-h#{$number * $i}{ min-height:($number  * $i) + px !important }
+    .max-h#{$number * $i}{ max-height:($number  * $i) + px !important }
+  }
+}
+@include height_factory (10,30);
+
+/****************************************/
+@mixin fw_factory ($number,$end) {
+  @for $i from 1 to $end {
+    .fw-#{$number * $i}{ font-weight: ($number * $i) !important;}
+  }
+}
+@include fw_factory (100,10);
+
+/****************************************/
+@mixin fs_factory ($number,$end) {
+  @for $i from 1 to $end {
+    .fs-#{$number * $i}{ font-size: ($number * $i) + px !important;}
+  }
+}
+@include fs_factory (1,50);
+/****************************************/
+
+
+// ------------- loading spinner -------------
+
+$loadingSpinnerDiameter: 28px;
+$loadingSpinnerStrokeWidth: 4px;
+$loadingSpinnerStrokeColor: #FFF;
+$loadingSpinnerOpacity: .8;
+$loadingSpinnerStrokeStyle: solid; // solid, dashed, dotted
+$loadingSpinnerSpeed: .7s;
+
+.loading {
+  border: $loadingSpinnerStrokeWidth $loadingSpinnerStrokeStyle $loadingSpinnerStrokeColor;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  width: $loadingSpinnerDiameter - ($loadingSpinnerStrokeWidth * 2);
+  height: $loadingSpinnerDiameter - ($loadingSpinnerStrokeWidth * 2);
+  opacity: $loadingSpinnerOpacity;
+  border-radius: 50%;
+  animation: loadingSpinner $loadingSpinnerSpeed infinite linear;
+  -webkit-animation: loadingSpinner $loadingSpinnerSpeed infinite linear;
+}
+
+@keyframes loadingSpinner {
+    from { transform: rotate(0deg)   }
+    to   { transform: rotate(360deg) }
+}
+
+@-webkit-keyframes loadingSpinner {
+    from { -webkit-transform: rotate(0deg)   }
+    to   { -webkit-transform: rotate(360deg) }
+}
+
+
+/**||Common CSS||**/
+
+.text-primary {
+  color: var(--primary) !important;
+}
+.text-secondary {
+  color: var(--secondary) !important;
+}
+.text-dark {
+  color: var(--darkcolor) !important;
+} 
+.text {
+  color: var(--bodytext) !important;
+}
+.text-black {
+  color: var(--black) !important;
+}
+.text-lite {
+  color: var(--litetext) !important;
+}
+.white-text {
+  color: var(--white) !important;
+}
+.black-text {
+  color: var(--black) !important;
+}
+.text-blue-link {
+  color: var(--blue) !important;
+  cursor: pointer;
+} 
+.hover-primary-link:hover {
+  color: var(--primary) !important;
+}
+.bg-lite {
+  background-color: var(--liteBg) !important;
+}
+.dark-bg,.bg-dark{
+  background-color: var(--darkcolor) !important; 
+}
+
+.fw-300{
+  font-weight: 300 !important;
+}
+.fw-400{
+  font-weight: 400 !important;
+}
+.fw-500{
+  font-weight: 500 !important;
+}
+.fw-600{
+  font-weight: 600 !important;
+}
+.fw-700{
+  font-weight: 700 !important;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 70px;
+  line-height: 1.1;
+  font-weight: 600;
+  @include lg {
+    font-size: 50px;
+  }
+  @include sm {
+    font-size: 40px;
+  }
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 50px;
+  line-height: 1.1;
+  font-weight: 600;
+  @include lg {
+    font-size: 35px;
+  }
+  @include sm {
+    font-size: 25px;
+  }
+} 
+h3 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  @include lg {
+    font-size: 25px;
+  }
+  @include sm {
+    font-size: 20px;
+  }
+}
+h4 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.1; 
+  @include lg {
+    font-size: 20px;
+  }
+  @include sm {
+    font-size: 18px;
+  }   
+}
+h5 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1; 
+  @include lg {
+    font-size: 18px;
+  }
+  @include sm {
+    font-size: 16px;
+  }     
+}
+h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--darkcolor);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;    
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+//Form 
+.form-group {
+  margin-bottom: 15px;
+}
+.label-title{
+  display: block;
+  margin-bottom: 5px; 
+  line-height: 1.2;
+  display: block;
+  font-size: 14px;
+}
+
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+   transition: background-color 5000s ease-in-out 0s;
+}
+
+.pointer {
+   cursor: pointer !important;
+}
+.text-center {
+    text-align: center !important;    
+}
+.d-none {
+    display: none !important;
+}
+.block {
+    display: block !important;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.divider {
+    border-top: 1px solid var(--lite-border-color);
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+.border-0 {
+    border: 0 !important;
+}
+.flex-wrap, .wrap {
+    flex-wrap: wrap!important;
+}
+.flex-shrink-0 {
+    -ms-flex-negative: 0!important;
+    flex-shrink: 0!important;
+}
+.flex-grow-1 {
+    -webkit-box-flex: 1!important;
+    -ms-flex-positive: 1!important;
+    flex-grow: 1!important;
+}
+.flex-1 {
+    flex: 1 !important;
+}
+.inline-flex {
+    display: inline-flex !important;
+    align-items: center;
+}
+.m-auto {
+    margin: auto;
+}
+
+//**||Prefix Class Name||**//
+.justify-content-right,.justify-content-center,.justify-content-left,.align-center,.align-bottom,
+.align-left,
+.align-right,
+.align-top,
+.align-between,
+.justify-space-between {
+    display: flex !important;
+} 
+.align-right, .justify-content-right {
+    justify-content: flex-end !important;
+} 
+.align-justify-center, .justify-content-center {
+    justify-content: center !important;
+} 
+.align-left, .justify-content-left {
+    justify-content: flex-start !important;
+} 
+.align-between, .justify-space-between {
+    justify-content: space-between !important;
+} 
+.align-center {
+    align-items: center !important;
+} 
+.align-bottom {
+    align-items: flex-end !important;
+} 
+.align-top {
+    align-items: flex-start !important;
+}
+.direction-column {
+    flex-direction: column;
+}
+
+/**|END|**/
+
+/** status **/
+.status {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.statusDiv {
+  padding: 6px 14px;
+  border-radius: 15px;
+  background: rgba(107,149,202,.13);
+  border: 1px solid rgba(107,149,202,.13);
+  color: var(--darkcolor);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  white-space: nowrap;
+}
+/** status End **/
+

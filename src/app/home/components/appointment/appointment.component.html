@@ -1,0 +1,117 @@
+<div class="modal-header">
+    <h4 class="modal-title">Appointment</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<form action="https://formspree.io/f/xayzrngw" method="post">
+    <div class="modal-body">
+        <div class="form-group-row">            
+            <div class="row">
+                <div class="col-xl-8 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Name <span class="required">*</span></label>
+                        <input class="form-control" name="Name" id="name" placeholder="Enter your name" required>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Phone <span class="required">*</span></label>   
+                        <input class="form-control" name="Phone" id="phone" placeholder="Enter your phone no." required>
+                    </div>
+                </div>     
+            </div>              
+        </div>
+        <div class="form-group">
+            <label class="label-title">Email </label>   
+            <input class="form-control" name="email" id="Email" placeholder="Email">
+        </div>
+        <div class="form-group-row">
+            <label class="label-title fw-500 mb10">Vehicle Information</label> 
+            <div class="row">
+                <div class="col-xl-4 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Select Vehicle year <span class="required">*</span></label>   
+                        <select class="form-select" name="Vehicle year" (change)="changeyear($event)" required>
+                            <option>Select time</option>
+                            <option *ngFor="let year of vehicleYears" [value]="year">{{year}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Select Brand <span class="required">*</span></label>   
+                        <select class="form-select" name="Brand"  (change)="changebrand($event)" required>
+                            <option>Select time</option>
+                            <option *ngFor="let brand of brandlist" [value]="brand.make">{{brand.make}}</option>
+                        </select>
+                    </div>
+                </div>           
+                <div class="col-xl-4 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Select Model <span class="required">*</span></label>   
+                        <select class="form-select" name="Model" required>
+                            <option>Select time</option>
+                            <option *ngFor="let model of modellist" [value]="model.model">{{model.model}}</option>
+                        </select>
+                    </div>
+                </div>            
+            </div>              
+        </div>
+        <div class="form-group">
+            <label class="label-title">Special offers </label>   
+            <select class="form-select" name="specialOffers">
+                <option>Select Special offers</option>
+                <option value="$15 off Windshield Replacement">$15 off Windshield Replacement</option>
+                <option value="$10 off Window Tinting">$10 off Window Tinting</option> 
+                <option value="$10 off Detailing Services">$10 off Detailing Services</option>                
+            </select>
+        </div>  
+        <div class="form-group">
+            <label class="label-title">Reason for appointment</label>   
+            <input class="form-control" name="reasonAppointment" id="reason-appointment" placeholder="Reason for appointment">
+        </div>  
+        <div class="form-group-row">  
+            <label class="label-title fw-500 mb10">Choose date and time </label>           
+            <div class="row">
+                <div class="col-xl-6 col-12">
+                    <div class="form-group">
+                        <label class="label-title">Date <span class="required">*</span></label>   
+                        <!-- <select class="form-select" name="Date" required>
+                            <option value="">Select day</option>
+                            <option *ngFor="let day of selectday" value="{{day}}">{{day}}</option>
+                        </select> -->
+                        <input type="date"  class="form-control" name="Date" required>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-12">
+                    <div class="form-group">
+                        <label class="label-title">time <span class="required">*</span></label>   
+                        <select class="form-select" name="Time" required>
+                            <option value="">Select time</option>
+                            <option value="9:00am - 9:30am">9:00am - 9:30am</option>
+                            <option value="9:30am - 10:00am">9:30am - 10:00am</option>
+                            <option value="10:00am - 10:30am">10:00am - 10:30am</option>
+                            <option value="10:30am - 11:00am">10:30am - 11:00am</option>
+                            <option value="11:00am - 11:30am">11:00am - 11:30am</option>
+                            <option value="11:30am - 12:00am">11:30am - 12:00am</option>
+                            <option value="12:00pm - 12:30pm">12:00pm - 12:30pm</option>
+                            <option value="12:30pm - 1:00pm">12:30pm - 1:00pm</option>
+                            <option value="1:00pm - 1:30pm">1:00pm - 1:30pm</option>
+                            <option value="1:30pm - 2:00pm">1:30pm - 2:00pm</option>
+                            <option value="2:00pm - 2:30pm">2:00pm - 2:30pm</option>
+                            <option value="2:30pm - 3:00pm">2:30pm - 3:00pm</option>
+                            <option value="3:00pm - 3:30pm">3:00pm - 3:30pm</option>
+                            <option value="3:30pm - 4:00pm">3:30pm - 4:00pm</option>
+                            <option value="4:00pm - 4:30pm">4:00pm - 4:30pm</option>
+                            <option value="4:30pm - 5:00pm">4:30pm - 5:00pm</option>
+                            <option value="5:00pm - 5:30pm">5:00pm - 5:30pm</option>
+                            <option value="5:30pm - 6:00pm">5:30pm - 6:00pm</option>
+                          </select>
+                    </div>
+                </div>    
+            </div>              
+        </div>
+    </div>
+    <div class="modal-footer">		
+        <button type="submit" class="btn btn-div btn-primary">Save</button> 
+    </div>	
+</form>
