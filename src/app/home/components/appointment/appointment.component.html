@@ -29,8 +29,8 @@
             <div class="row">
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
-                        <label class="label-title">Vehicle Year <span class="required">*</span></label>   
-                        <select class="form-select" name="Vehicle year" (change)="changeyear($event)" required>
+                        <label class="label-title">Vehicle Year</label>   
+                        <select #selectedYear class="form-select" name="Vehicle year" (change)="changeyear(selectedYear.value)" required>
                             <option>Select Vehicle Year</option>
                             <option *ngFor="let year of vehicleYears" [value]="year">{{year}}</option>
                         </select>
@@ -38,19 +38,19 @@
                 </div>
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
-                        <label class="label-title">Select Make <span class="required">*</span></label>   
-                        <select class="form-select" name="Brand"  (change)="changebrand($event)" required>
+                        <label class="label-title">Vehicle Make</label>   
+                        <select #selectedMake class="form-select" name="Brand"  (change)="changebrand(selectedYear.value, selectedMake.value)" required>
                             <option>Select Vehicle Make</option>
-                            <option *ngFor="let brand of brandlist" [value]="brand.make">{{brand.make}}</option>
+                            <option *ngFor="let brand of brandlist" [value]="brand">{{brand}}</option>
                         </select>
                     </div>
                 </div>           
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
-                        <label class="label-title">Select Model <span class="required">*</span></label>   
+                        <label class="label-title">Vehicle Model</label>   
                         <select class="form-select" name="Model" required>
                             <option>Select Model</option>
-                            <option *ngFor="let model of modellist" [value]="model.model">{{model.model}}</option>
+                            <option *ngFor="let model of modellist" [value]="model">{{model}}</option>
                         </select>
                     </div>
                 </div>            
@@ -75,10 +75,6 @@
                 <div class="col-xl-6 col-12">
                     <div class="form-group">
                         <label class="label-title">Date <span class="required">*</span></label>   
-                        <!-- <select class="form-select" name="Date" required>
-                            <option value="">Select day</option>
-                            <option *ngFor="let day of selectday" value="{{day}}">{{day}}</option>
-                        </select> -->
                         <input type="date"  class="form-control" name="Date" required>
                     </div>
                 </div>
