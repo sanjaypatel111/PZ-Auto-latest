@@ -357,7 +357,20 @@ ul {
             z-index: -1;
             transform: skewX(0deg);
             border-radius: 10px;
-        }       
+        }   
+        .headerInnContact{
+            flex-direction: column;
+            .headerContInfo {
+                width: 100%;
+                white-space: normal;
+                align-items: flex-start !important;
+                &.adr{
+                    svg{
+                        width: 22px !important;
+                    }
+                }
+            }
+        }    
     }
 
     .menuOpen {
