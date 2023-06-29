@@ -9,38 +9,38 @@
                 <div class="col-xl-8 col-12">
                     <div class="form-group">
                         <label class="label-title">Name <span class="required">*</span></label>
-                        <input class="form-control" name="Name" id="name" placeholder="Enter your name" required>
+                        <input class="form-control" name="Name" id="name" placeholder="Enter Your Name" required>
                     </div>
                 </div>
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
                         <label class="label-title">Phone <span class="required">*</span></label>   
-                        <input class="form-control" name="Phone" id="phone" placeholder="Enter your phone no." required>
+                        <input class="form-control" name="Phone" id="phone" placeholder="Enter Your Phone Number" required>
                     </div>
                 </div>     
             </div>              
         </div>
         <div class="form-group">
             <label class="label-title">Email </label>   
-            <input class="form-control" name="email" id="Email" placeholder="Email">
+            <input class="form-control" name="email" id="Email" placeholder="Enter Your Email">
         </div>
         <div class="form-group-row">
             <label class="label-title fw-500 mb10">Vehicle Information</label> 
             <div class="row">
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
-                        <label class="label-title">Select Vehicle year <span class="required">*</span></label>   
+                        <label class="label-title">Vehicle Year <span class="required">*</span></label>   
                         <select class="form-select" name="Vehicle year" (change)="changeyear($event)" required>
-                            <option>Select time</option>
+                            <option>Select Vehicle Year</option>
                             <option *ngFor="let year of vehicleYears" [value]="year">{{year}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-xl-4 col-12">
                     <div class="form-group">
-                        <label class="label-title">Select Brand <span class="required">*</span></label>   
+                        <label class="label-title">Select Make <span class="required">*</span></label>   
                         <select class="form-select" name="Brand"  (change)="changebrand($event)" required>
-                            <option>Select time</option>
+                            <option>Select Vehicle Make</option>
                             <option *ngFor="let brand of brandlist" [value]="brand.make">{{brand.make}}</option>
                         </select>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <label class="label-title">Select Model <span class="required">*</span></label>   
                         <select class="form-select" name="Model" required>
-                            <option>Select time</option>
+                            <option>Select Model</option>
                             <option *ngFor="let model of modellist" [value]="model.model">{{model.model}}</option>
                         </select>
                     </div>
@@ -66,11 +66,11 @@
             </select>
         </div>  
         <div class="form-group">
-            <label class="label-title">Reason for appointment</label>   
-            <input class="form-control" name="reasonAppointment" id="reason-appointment" placeholder="Reason for appointment">
+            <label class="label-title">Reason for Appointment</label>   
+            <input class="form-control" name="reasonAppointment" id="reason-appointment" placeholder="Reason for Appointment">
         </div>  
         <div class="form-group-row">  
-            <label class="label-title fw-500 mb10">Choose date and time </label>           
+            <label class="label-title fw-500 mb10">Choose Date and Time </label>           
             <div class="row">
                 <div class="col-xl-6 col-12">
                     <div class="form-group">
@@ -112,6 +112,6 @@
         </div>
     </div>
     <div class="modal-footer">		
-        <button type="submit" class="btn btn-div btn-primary">Save</button> 
+        <button type="submit" class="btn btn-div btn-primary">Submit</button> 
     </div>	
 </form>
