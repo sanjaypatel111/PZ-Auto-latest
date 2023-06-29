@@ -43,7 +43,7 @@
                 <div class="categoryBox" data-aos="fade-up">                    
                     <h4>$15 off <span>Windshield <span class="d-block">Replacement</span></span></h4>
                     <P>Get back on the road with confidence with $15 off your windshield replacement!</P>
-                    <button class="btn btn-div btn-white" (click)="openRedeemDialog(content)">
+                    <button class="btn btn-div btn-white" (click)="appointmentDialog()">
                         Redeem Now
                         <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,7 +56,7 @@
                 <div class="categoryBox" data-aos="fade-up" data-aos-duration="1200">                    
                     <h4>$10 off <span>Window <span class="d-block">Tinting</span></span></h4>
                     <P>Enhance your ride and keep cool with $10 off your next window tinting service!</P>
-                    <button class="btn btn-div btn-white"  (click)="openRedeemDialog(windowTintingCoupon)">
+                    <button class="btn btn-div btn-white"  (click)="appointmentDialog()">
                         Redeem Now
                         <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -69,7 +69,7 @@
                 <div class="categoryBox" data-aos="fade-up" data-aos-duration="1600">                    
                     <h4>$10 off <span>Detailing <span class="d-block">Services</span></span></h4>
                     <P>Detailing service is coming soon</P>
-                    <button class="btn btn-div btn-white" (click)="openRedeemDialog(detailingCoupon)">
+                    <button class="btn btn-div btn-white" (click)="appointmentDialog()">
                         Redeem Now
                         <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -491,137 +491,6 @@
         Modal Start Here
     ======================================
 -->
-
-
-<!-- Coupon - Windshield Replacement -->
-<ng-template #content let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title">$15 off <span class="fw-300">Windshield Replacement</span></h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-		<div class="redeemModalContent">
-            <p>We understand the importance of a clear and intact windshield for your safety on the road. That's why we are excited to offer you a limited-time opportunity to save $15 off your next windshield replacement with our exclusive coupon! Don't compromise your visibility or risk further damage – take advantage of this special offer and ensure your drive remains safe and enjoyable.</p>
-            <h5 class="redeemSubTitle">How to Redeem</h5>
-            <ul>
-                <li>Schedule an appointment by contacting us via phone or through our website.</li>
-                <li>Mention the coupon and provide necessary details while booking your appointment.</li>
-                <li>Present the coupon (printed or digital) to our staff at the time of your appointment.</li>
-                <li>Our technicians will perform the windshield replacement service while applying the $15 discount to your total bill.</li>
-                <li>Complete the service, make the payment, and enjoy your newly replaced windshield at a discounted price.</li>
-            </ul>
-            <h5 class="redeemSubTitle">Terms and Conditions:</h5>
-            <ul>
-                <li>Coupon valid for windshield replacement services only.</li>
-                <li>One coupon per customer per visit.</li>
-                <li>Not valid with any other offers or discounts.</li>
-                <li>Coupon must be presented at the time of service.</li>
-                <li>Coupon cannot be redeemed for cash or used towards any other services.</li>
-            </ul>            
-        </div>
-	</div>
-    <!-- <div class="modal-footer">		
-        <button class="btn btn-div btn-primary" (click)="modal.close('Close click')">
-            Redeem Now
-            <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 1.25L16.35 8.6L9 15.95" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                                                                                
-        </button> 
-	</div>	 -->
-</ng-template>
-
-<!-- Coupon - Window Tinting -->
-<ng-template #windowTintingCoupon let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title">$10 off <span class="fw-300">Window Tinting</span></h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-		<div class="redeemModalContent">
-            <p>Rev up your ride's style and enjoy the benefits of our premium window tinting services at an unbeatable price! Take advantage of our exclusive discount coupon to receive $10 off on your next professional window tinting service at our garage shop.</p>
-            <h5 class="redeemSubTitle">How to Redeem</h5>
-            <ul>
-                <li>Call our garage shop at [Phone Number] or visit us in person to schedule your window tinting appointment.</li>
-                <li>Mention the coupon offer during your appointment booking.</li>
-                <li>Present the coupon to our staff at the time of service</li>
-                <li>The $10 discount will be applied to your total bill.</li>
-                <li>Enjoy your upgraded ride with professionally tinted windows!</li>
-            </ul>
-            <p>
-                Note: Please refer to the terms and conditions for any specific requirements or restrictions associated with the coupon offer.
-            </p>
-            <h5 class="redeemSubTitle">Terms and Conditions:</h5>
-            <ul>
-                <li>This coupon is valid for a $10 discount on professional window tinting services at our garage shop.</li>
-                <li>The coupon cannot be combined with any other offers or promotions.</li>
-                <li>Only one coupon can be used per customer per visit.</li>
-                <li>The coupon has no cash value and cannot be redeemed for cash.</li>
-                <li>Valid only at our garage shop location.</li>
-                <li>Appointment scheduling is subject to availability.</li>
-                <li>The coupon must be presented at the time of service to be eligible for the discount.</li>
-                <li>The coupon is valid until the expiration date mentioned below.</li>
-                <li>Additional charges may apply for any additional services or customization.</li>
-                <li>Our standard terms and conditions for window tinting services apply.</li>
-            </ul>            
-        </div>
-	</div>	
-    <!-- <div class="modal-footer">		
-        <button class="btn btn-div btn-primary" (click)="modal.close('Close click')">
-            Redeem Now
-            <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 1.25L16.35 8.6L9 15.95" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                                                                                
-        </button> 
-	</div>	 -->
-</ng-template>
-
-<!-- Coupon - Detailing Services -->
-<ng-template #detailingCoupon let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title">$10 off <span class="fw-300">Detailing Services</span></h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-		<div class="redeemModalContent">
-            <p class="min-h100 fs-18 align-center justify-content-center">Detailing service is coming soon</p>
-            <!-- <p>
-                Enjoy a $10 discount on our premium detailing services! Treat your vehicle to a comprehensive makeover, including interior rejuvenation, paint restoration, and meticulous attention to detail. Don't miss out on this limited-time offer!
-            </p>
-            <h5 class="redeemSubTitle">How to Redeem</h5>
-            <ul>
-                <li>Mention the coupon offer during your appointment booking.</li>
-                <li>Present the coupon to our staff at the time of service.</li>
-                <li>The $10 discount will be applied to your total bill.</li>
-                <li>Sit back and relax as our detailing experts transform your vehicle!</li>
-            </ul>
-            <h5 class="redeemSubTitle">Terms and Conditions:</h5>
-            <ul>
-                <li>This coupon entitles you to a $10 discount on any detailing service.</li>
-                <li>The coupon cannot be combined with any other offers or promotions.</li>
-                <li>Only one coupon can be used per customer per visit.</li>
-                <li>The coupon has no cash value and cannot be redeemed for cash.</li>
-                <li>Valid only at our location offering detailing services.</li>
-                <li>Appointment scheduling is subject to availability.</li>
-                <li>The coupon must be presented at the time of service to be eligible for the discount.</li>
-                <li>The coupon is valid until the expiration date mentioned below.</li>
-                <li>Additional charges may apply for extra services or additional customization.</li>
-                <li>Our standard terms and conditions for detailing services apply.</li>
-            </ul>             -->
-        </div>
-	</div>	
-    <!-- <div class="modal-footer">		
-        <button class="btn btn-div btn-primary" (click)="modal.close('Close click')">
-            Redeem Now
-            <svg class="icon-btn ml10" width="14" height="13" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.6499 8.59998H16.3499" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 1.25L16.35 8.6L9 15.95" stroke="" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                                                                                
-        </button> 
-	</div>	 -->
-</ng-template>
-
 
 
 <!-- Services - Auto Glass Replacement -->
