@@ -17,6 +17,6 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
     HomeRoutingModule,
     SharedModule,
     SwiperModule,
-  ]
+  ],
 })
 export class HomeModule { }

@@ -13,25 +13,33 @@ export class AppointmentComponent implements OnInit {
   modellist:string[] = [];
   minDate: string | undefined;
 
-  constructor(public dialog: NgbActiveModal) {
+  // Get the current date
+  todayData = new Date().toISOString().split("T")[0];
+  
 
+  constructor(public dialog: NgbActiveModal) {
+    
    }
 
 
   ngOnInit(): void {
+    console.log(this.todayData)
+    // document.getElementById("dateInput").setAttribute("min", today);
+
     // loop over json object and get all year then remove duplicate years and sort it to show options from latest to oldest years
     this.vehicleYears = [...new Set(CarsMakesModalsYears.map(carObject => carObject.start_year))].sort((a, b) => b - a);
 
-    
-      // Get today's date
-      const today = new Date();
+      // // Get today's date
+      // const today = new Date();
 
-      // Format the date to yyyy-mm-dd
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, '0');
-      const dd = String(today.getDate()).padStart(2, '0');
-      this.minDate = `${yyyy}-${mm}-${dd}`;
+      // // Format the date to yyyy-mm-dd
+      // const yyyy = today.getFullYear();
+      // const mm = String(today.getMonth() + 1).padStart(2, '0');
+      // const dd = String(today.getDate()).padStart(2, '0');
+      // this.minDate = `${yyyy}-${mm}-${dd}`;
 
+      
+      
   }
 
   close() {
